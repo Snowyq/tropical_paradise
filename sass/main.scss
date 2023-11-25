@@ -74,6 +74,64 @@ body {
 	}
 }
 
+.nav {
+	position: fixed;
+	top: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100%;
+	transform: translateX(100%);
+	transition: 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
+	background-image: c.$blue-gradient-solid;
+	z-index: 100;
+
+	&--active {
+		transform: translateX(0);
+	}
+
+	&__item {
+		position: relative;
+		display: block;
+		margin: 0.5em 0;
+		padding: 0.5em 2em;
+		font-size: 2.8rem;
+		color: c.$pure-white;
+		text-decoration: none;
+
+		&::before {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 3px;
+			height: 100%;
+			transform: scaleY(0);
+			transition: transform 0.3s;
+			background-color: c.$pure-white;
+			content: '';
+		}
+
+		&:hover::before {
+			transform: scaleY(1);
+		}
+	}
+}
+
+@keyframes navItemsAnimation {
+    from {
+        transform: translateX(200%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+.nav-items-animation {
+    animation: navItemsAnimation 1s both;
+}
+
 //HEADER
 
 .header {
@@ -138,17 +196,23 @@ body {
 	}
 }
 
+//MAIN
+//DREAMS SECTION
+.dreams {
+    
+}
+
 @media (min-width: 992px) {
 	.burger-btn {
 		top: 50px;
 		right: 50px;
 	}
 
-    .header {
-        background-image: c.$blue-gradient, url('../img/tropical_island_big.jpeg');
+	.header {
+		background-image: c.$blue-gradient, url('../img/tropical_island_big.jpeg');
 
-        &__heading {
-            font-size: 10rem;
-        }
-    }
+		&__heading {
+			font-size: 10rem;
+		}
+	}
 }
