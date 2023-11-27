@@ -333,6 +333,66 @@ body {
 	}
 }
 
+//OFFERS
+.offers {
+	position: relative;
+	@include mixins.heroImages('../img/maldives-hero-small.jpeg');
+	overflow: hidden;
+
+	.section-heading {
+		color: c.$pure-white;
+	}
+
+	&__option {
+		margin: 1em 0;
+		box-shadow: 5px 5px 10px rgba(46, 46, 46, 0.18);
+		background-color: c.$pure-white;
+		overflow: hidden;
+
+		&-img {
+			width: 100%;
+			transition: transform 0.3s;
+			object-fit: cover;
+
+			&:hover {
+				transform: scale(1.1);
+			}
+		}
+
+		&-info {
+			padding: 2em;
+			background-color: c.$pure-white;
+			z-index: 10;
+		}
+
+		&-heading {
+			margin-bottom: 0.5em;
+			font-size: 2.4rem;
+			font-weight: 300;
+		}
+
+		&-text {
+			margin-bottom: 0.5em;
+			font-size: 1.3rem;
+			color: c.$dark;
+		}
+
+		&-btn {
+			margin-top: 1em;
+			padding: 0.8em;
+			width: 100%;
+			color: c.$pure-white;
+			background-color: c.$main-color;
+			border: none;
+			cursor: pointer;
+
+			&::before {
+				background-color: c.$secondary-color;
+			}
+		}
+	}
+}
+
 ///////////////////////////////////////////////////////////
 // M	E	D	I	A
 ///////////////////////////////////////////////////////////
@@ -362,6 +422,38 @@ body {
 			&__img {
 				margin-bottom: 0;
 				max-height: 300px;
+			}
+		}
+	}
+
+	.offers {
+		&__option {
+			display: flex;
+			margin: 2em 0;
+			width: 100%;
+
+			&-img {
+				width: 50%;
+				// height: auto;
+
+				&--right {
+					order: 1;
+				}
+			}
+
+			&-info {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+			}
+
+			&-heading {
+				margin-bottom: 0.5rem;
+				font-size: 3.6rem;
+			}
+
+			&-btn {
+				padding: 1em;
 			}
 		}
 	}
@@ -474,12 +566,33 @@ body {
 			max-width: 900px;
 		}
 	}
+
+	.offers {
+		background-image: c.$blue-gradient, url('../img/maldives-hero-big.jpeg');
+
+		&__option {
+			&-text {
+				font-size: 1.5em;
+			}
+		}
+	}
 }
 
 @media (min-width: 1100px) {
 	.islands {
 		&__card {
 			width: 30%;
+		}
+	}
+	.offers {
+		background-image: c.$blue-gradient, url('../img/maldives-hero-big.jpeg');
+
+		&__option {
+			height: 400px;
+
+			&-text {
+				font-size: 1.5em;
+			}
 		}
 	}
 }
