@@ -132,6 +132,10 @@ body {
 	animation: navItemsAnimation 1s both;
 }
 
+.black-bars-color, .black-bars-color::after, .black-bars-color::before {
+	background-color: c.$dark;	
+}
+
 //HEADER
 
 .header {
